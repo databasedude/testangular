@@ -47,3 +47,15 @@ The "tests" and "karma" parameters may both be used if desired:
 
     $ grunt e2e --karma=false --tests=login,profile --mock
 
+Help
+----------
+To get a list of commands:
+
+    $ grunt --help
+
+
+
+
+
+
+

@@ -1,5 +1,48 @@
 module.exports = function(grunt){
 
+    if (/-*h{1}(elp)*/.test(process.argv[2])) {
+        grunt.log.writeln("\n\x1b[1m\x1b[4m app Grunt usage:\x1b[0m\n");
+        grunt.log.writeln("\x1b[36;1m  grunt \x1b[33;1m<task> \x1b[35;1m[parameters...]\x1b[0m");
+
+        grunt.log.writeln("\n\x1b[33;1m Tasks\x1b[0m may be one of:");
+        grunt.log.writeln("  build     : regular build");
+        grunt.log.writeln("  dev-build : development build");
+        grunt.log.writeln("  dev       : run dev server");
+        grunt.log.writeln("  prod      : run production server");
+        grunt.log.writeln("  e2e       : run end-to-end tests");
+        grunt.log.writeln("  deploy    : create deployment files");
+
+        grunt.log.writeln("\n\x1b[35;1m Parameters\x1b[0m may include:");
+        grunt.log.writeln("  --browsers=[options] : Chrome (default), Firefox, Safari, PhantomJS, etc.");
+        grunt.log.writeln("                         Karma unit tests default to Chrome for all_reports,");
+        grunt.log.writeln("                         PhantomJS anything else.");
+        grunt.log.writeln("                         May be a comma separated list.");
+        grunt.log.writeln("  --karma=[options]    : select which karma unit tests to run. Options:");
+        grunt.log.writeln("                        \x1b[36;1m all_reports\x1b[0m or\x1b[36;1m true\x1b[0m (default) - produces reports");
+        grunt.log.writeln("                        \x1b[36;1m all\x1b[0m - all tests without reports");
+        grunt.log.writeln("                        \x1b[36;1m none\x1b[0m or\x1b[36;1m false\x1b[0m - disable unit tests");
+        grunt.log.writeln("                        \x1b[36;1m <test_names>\x1b[0m - run tests in directory <test_names>,");
+        grunt.log.writeln("                                        a comma separated list of test dirs.");
+        grunt.log.writeln("  --loglevel=[option]  : karma log level (\x1b[36;1mDEBUG\x1b[0m or \x1b[36;1mERROR\x1b[0m).");
+        grunt.log.writeln("                         Default is ERROR.");
+        grunt.log.writeln("  --eetests=[options]  : select which end-to-end tests to run. Options:");
+        grunt.log.writeln("                        \x1b[36;1m all\x1b[0m - all E2E tests");
+        grunt.log.writeln("                        \x1b[36;1m none\x1b[0m or\x1b[36;1m false\x1b[0m - disable E2E tests");
+        grunt.log.writeln("                        \x1b[36;1m <test_names>\x1b[0m - run tests in directory <test_names>,");
+        grunt.log.writeln("                                        a comma separated list of test dirs.");
+        grunt.log.writeln("  --submodule=[option] : Pull git submodule (default\x1b[36;1m true\x1b[0m)");
+        grunt.log.writeln("  --mock[=true]        : use mock data.\x1b[31;1m This must be the final parameter\x1b[0m");
+        grunt.log.writeln("                         unless a value is given e.g. mock=true");
+
+        grunt.log.writeln("\n\x1b[1m Examples:\x1b[0m");
+        grunt.log.writeln("  grunt\x1b[33;1m build\x1b[0m");
+        grunt.log.writeln("  grunt\x1b[33;1m dev\x1b[0m");
+        grunt.log.writeln("  grunt\x1b[33;1m dev\x1b[35;1m --karma=login,menu\x1b[0m");
+        grunt.log.writeln("  grunt\x1b[33;1m dev\x1b[35;1m --mock\x1b[0m");
+        grunt.log.writeln("  grunt\x1b[33;1m e2e\x1b[35;1m --karma=false --eetests=graphs,profile --mock\x1b[0m");
+        process.exit(0);
+    }
+
     require('load-grunt-tasks')(grunt, {pattern: 'grunt-*'});
 
     var rewrite         = require('connect-modrewrite'),
@@ -663,47 +706,6 @@ module.exports = function(grunt){
         return resultsArray;
     }
 
-    if (/-*h{1}(elp)*/.test(process.argv[2])) {
-        grunt.log.writeln("\n\x1b[1m\x1b[4m app Grunt usage:\x1b[0m\n");
-        grunt.log.writeln("\x1b[36;1m  grunt \x1b[33;1m<task> \x1b[35;1m[parameters...]\x1b[0m");
 
-        grunt.log.writeln("\n\x1b[33;1m Tasks\x1b[0m may be one of:");
-        grunt.log.writeln("  build     : regular build");
-        grunt.log.writeln("  dev-build : development build");
-        grunt.log.writeln("  dev       : run dev server");
-        grunt.log.writeln("  prod      : run production server");
-        grunt.log.writeln("  e2e       : run end-to-end tests");
-        grunt.log.writeln("  deploy    : create deployment files");
-
-        grunt.log.writeln("\n\x1b[35;1m Parameters\x1b[0m may include:");
-        grunt.log.writeln("  --browsers=[options] : Chrome (default), Firefox, Safari, PhantomJS, etc.");
-        grunt.log.writeln("                         Karma unit tests default to Chrome for all_reports,");
-        grunt.log.writeln("                         PhantomJS anything else.");
-        grunt.log.writeln("                         May be a comma separated list.");
-        grunt.log.writeln("  --karma=[options]    : select which karma unit tests to run. Options:");
-        grunt.log.writeln("                        \x1b[36;1m all_reports\x1b[0m or\x1b[36;1m true\x1b[0m (default) - produces reports");
-        grunt.log.writeln("                        \x1b[36;1m all\x1b[0m - all tests without reports");
-        grunt.log.writeln("                        \x1b[36;1m none\x1b[0m or\x1b[36;1m false\x1b[0m - disable unit tests");
-        grunt.log.writeln("                        \x1b[36;1m <test_names>\x1b[0m - run tests in directory <test_names>,");
-        grunt.log.writeln("                                        a comma separated list of test dirs.");
-        grunt.log.writeln("  --loglevel=[option]  : karma log level (\x1b[36;1mDEBUG\x1b[0m or \x1b[36;1mERROR\x1b[0m).");
-        grunt.log.writeln("                         Default is ERROR.");
-        grunt.log.writeln("  --eetests=[options]  : select which end-to-end tests to run. Options:");
-        grunt.log.writeln("                        \x1b[36;1m all\x1b[0m - all E2E tests");
-        grunt.log.writeln("                        \x1b[36;1m none\x1b[0m or\x1b[36;1m false\x1b[0m - disable E2E tests");
-        grunt.log.writeln("                        \x1b[36;1m <test_names>\x1b[0m - run tests in directory <test_names>,");
-        grunt.log.writeln("                                        a comma separated list of test dirs.");
-        grunt.log.writeln("  --submodule=[option] : Pull git submodule (default\x1b[36;1m true\x1b[0m)");
-        grunt.log.writeln("  --mock[=true]        : use mock data.\x1b[31;1m This must be the final parameter\x1b[0m");
-        grunt.log.writeln("                         unless a value is given e.g. mock=true");
-
-        grunt.log.writeln("\n\x1b[1m Examples:\x1b[0m");
-        grunt.log.writeln("  grunt\x1b[33;1m build\x1b[0m");
-        grunt.log.writeln("  grunt\x1b[33;1m dev\x1b[0m");
-        grunt.log.writeln("  grunt\x1b[33;1m dev\x1b[35;1m --karma=login,menu\x1b[0m");
-        grunt.log.writeln("  grunt\x1b[33;1m dev\x1b[35;1m --mock\x1b[0m");
-        grunt.log.writeln("  grunt\x1b[33;1m e2e\x1b[35;1m --karma=false --eetests=graphs,profile --mock\x1b[0m");
-        process.exit(0);
-    }
 
 };
