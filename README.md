@@ -39,13 +39,13 @@ It is possible to run the end-to-end tests without running the unit tests to sav
 
     $ grunt e2e --karma=false --mock
 
-To run individual tests, pass a comma separated list to the "tests" parameter:
+To run individual tests, pass a comma separated list of modules to the "tests" parameter:
 
-    $ grunt e2e --tests=graphs,profile --mock
+    $ grunt e2e --eetests=login,profile --mock
 
 The "tests" and "karma" parameters may both be used if desired:
 
-    $ grunt e2e --karma=false --tests=login,profile --mock
+    $ grunt e2e --karma=false --eetests=login,profile --mock
 
 Help
 ----------
