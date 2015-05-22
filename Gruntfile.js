@@ -107,6 +107,17 @@ module.exports = function(grunt){
         "!**/*.po.js"
     ]);
 
+    //find all scss files mixed-in with js and insert into _modules.scss
+    grunt.file.write('scss/_modules.scss', function() {
+        var str = '';
+        var aux = grunt.file.expand(['src/scripts/**/*.scss']);
+        var auxLength = aux.length;
+        for (var j = 0; j < auxLength; j++) {
+            str += '@import "../' + aux[j].replace('.scss', '').replace('/_', '/') + '";\n';
+        }
+        return str;
+    }());
+
     var dev_files = []
         .concat(lib_files)
         .concat(src_files)
