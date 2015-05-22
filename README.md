@@ -19,7 +19,7 @@ Navigate to the testangular directory, then run the following command:
 
     $ npm install
 
-This install all of the dependencies, both node and bower.
+This will install all of the app dependencies including node and bower packages.
 
 Grunt Dev
 ---------------------
@@ -27,7 +27,7 @@ This command starts a node.js server and runs the tests.  A chrome browser shoul
 http://localhost:8000.  A grunt watch task will detect any changes to javascript, html or css files and
 reload the browser.
 
-To run the app in localhost with mock data:
+To run the app in localhost with mock data and keep it alive while changing files:
 
     $ grunt dev --mock
 
