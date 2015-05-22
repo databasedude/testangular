@@ -1,0 +1,16 @@
+.DS_Store
+node_modules
+.idea
+bower_components
+.sass-cache
+src/lib
+src/css
+src/mocks
+src/languages
+dist
+output
+www
+build
+src/index.html
+src/scripts/app.templates.js
+scss/_modules.scss

@@ -1,0 +1,21 @@
+.alert {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+}
+.alert-error {
+    background-color: lighten($tomato, 30%);
+    color: $tomato;
+}
+.alert-success {
+    background-color: lighten($leaf, 5%);
+    color: $white;
+}
+.alert-below {
+    background-color: transparent;
+    border: 0;
+    margin: -1rem 0 0.75rem;
+}
+.alert-clean {
+    background-color: transparent;
+    border: 0;
+}

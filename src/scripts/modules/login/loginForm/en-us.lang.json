@@ -1,0 +1,16 @@
+{
+    "EMAIL_PLACEHOLDER": "email address",
+    "KEEP_ME_SIGNED_IN": "Remember me",
+    "PASSWORD": "password",
+    "SIGNIN_BUTTON": "sign in",
+    "LOGIN_FORM_TITLE": "Sign in",
+    "FORGOT_PASSWORD": "Forgot password?",
+    "MIN_LENGTH_ERROR_PASSWORD": "Enter your password.",
+    "MISSING_PASSWORD": "Enter your password.",
+    "EMAIL_INVALID_FORMAT_ERROR": "Invalid email address.",
+    "ENTER_VALID_EMAIL": "Enter a valid email address.",
+    "INVALID_EMAIL_PASSWORD": "Invalid email and password combination.",
+    "UNABLE_TO_LOGIN": "Unable to sign in. Please try again.",
+    "UNABLE_TO_REACH_SERVER": "Unable to reach server.",
+    "ACCOUNT_NOT_VALIDATED": "We need to confirm your email. Please click the confirmation link in the email we sent to activate your account!"
+}

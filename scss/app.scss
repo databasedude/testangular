@@ -1,0 +1,41 @@
+@import "normalize";
+@import "settings";
+@import "../bower_components/foundation/scss/foundation/components/accordion";
+@import "../bower_components/foundation/scss/foundation/components/alert-boxes";
+@import "../bower_components/foundation/scss/foundation/components/block-grid";
+@import "../bower_components/foundation/scss/foundation/components/buttons";
+@import "../bower_components/foundation/scss/foundation/components/forms";
+@import "../bower_components/foundation/scss/foundation/components/switches";
+@import "../bower_components/foundation/scss/foundation/components/grid";
+@import "../bower_components/foundation/scss/foundation/components/inline-lists";
+@import "../bower_components/foundation/scss/foundation/components/reveal";
+@import "../bower_components/foundation/scss/foundation/components/joyride";
+@import "../bower_components/foundation/scss/foundation/components/tooltips";
+@import "../bower_components/foundation/scss/foundation/components/type";
+@import "../bower_components/compass-mixins/lib/compass";
+@import "partials/colors";
+@import "partials/shared";
+@import "partials/alerts";
+
+@import "modules";
+@import "debugging";
+body {
+    background: $white;
+    overflow: hidden;
+    @media #{$large-up} {
+        overflow: auto;
+        background: $background;
+    }
+}
+header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.sp-section {
+    padding: 2rem 2rem 0 2rem;
+}
+.dashed-hr {
+    border: 0;
+    border-bottom: 1px dashed $border;
+    margin-top: 5px;
+}

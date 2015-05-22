@@ -1,0 +1,20 @@
+$earth: #0076be;
+$sun: #f7921e;
+$slate: #39607a;
+$concrete: #5e6367;
+$lily: #8d54a2;
+$tomato: #ef373e;
+$citrus: #f26a36;
+$leaf: #69b342;
+$gravel: #9cbccd;
+$daisy: #ffe600;
+$black: #231f20;
+$white: #FFF;
+
+$primary: $primary-color;
+$darkText: darken($primary, 15%);
+$disabled: lighten(desaturate($primary, 70%), 40%);
+$border: lighten($concrete, 45%);
+$background: #f1f1f2;
+$shadow: #bbbdbf;
+$transparent: transparent;

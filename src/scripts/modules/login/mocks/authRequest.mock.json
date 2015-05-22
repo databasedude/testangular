@@ -1,0 +1,52 @@
+{
+  "id": "mockAuthRequest",
+  "mocks": [
+	{
+	  "id": "default",
+	  "type": "POST",
+	  "url": "/Auth/Authentication.svc/Authenticate",
+	  "params": {
+		"UserName": "darryl@domain.com",
+		"Password": "password",
+		"IsPersistent": false
+	  },
+	  "response": {
+		"status": "200",
+		"data": {
+		   "Name": "Darryl Parker"
+		}
+	  }
+	},
+	{
+	  "id": "badCreds",
+	  "type": "POST",
+	  "url": "/Auth/Authentication.svc/Authenticate",
+	  "params": {
+		"UserName": "badCreds@domain.com",
+		"Password": "password",
+		"IsPersistent": false
+	  },
+	  "response": {
+		"status": "403",
+		"data": {
+		  "error": "Invalid Username or Password",
+		  "code": "INVALID_EMAIL_PASSWORD"
+		}
+	  }
+	},
+	{
+	  "id": "loginFailure",
+	  "type": "POST",
+	  "url": "/Auth/Authentication.svc/Authenticate",
+	  "params": {
+		"UserName": "loginFailure@domain.com",
+		"Password": "password",
+		"IsPersistent": false
+	  },
+	  "response": {
+		"status": "405",
+		"data": {"error": "An unexpected server error occurred."}
+	  }
+	}
+  ]
+}

@@ -1,0 +1,25 @@
+.sp-main {
+    @include grid-row;
+    @include box-shadow($concrete 0 0 0);
+    background: $white;
+    &.sp-main-on {
+        @include box-shadow($concrete 0 0 0);
+    }
+}
+
+.sp-view {
+    height: 100%;
+    margin-top: 50px;
+    position: relative;
+    @media #{$large-up} {
+        margin-top: 80px;
+    }
+    &.sp-view-on {
+        @media #{$large-up} {
+            background: $white;
+            margin-left: 110px;
+            @include grid-column(11);
+        }
+    }
+}
+
