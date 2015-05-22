@@ -27,7 +27,7 @@
 		"IsPersistent": false
 	  },
 	  "response": {
-		"status": "403",
+		"status": "401",
 		"data": {
 		  "error": "Invalid Username or Password",
 		  "code": "INVALID_EMAIL_PASSWORD"
@@ -44,7 +44,7 @@
 		"IsPersistent": false
 	  },
 	  "response": {
-		"status": "405",
+		"status": "401",
 		"data": {"error": "An unexpected server error occurred."}
 	  }
 	}
